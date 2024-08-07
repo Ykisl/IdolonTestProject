@@ -37,7 +37,7 @@ namespace Project.DataSaving
             return data != null;
         }
 
-        public void SaveData(string name, object data)
+        public void SaveData<T>(string name, T data)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -45,13 +45,20 @@ namespace Project.DataSaving
             }
 
             var dataPath = GetDataPath(name);
+            var fileDirectory = Path.GetDirectoryName(dataPath);
+
+            if(!Directory.Exists(fileDirectory))
+            {
+                Directory.CreateDirectory(fileDirectory);
+            }
+
             var fileData = JsonUtility.ToJson(data);
             File.WriteAllText(dataPath, fileData);
         }
 
         private string GetDataPath(string filePath) 
         {
-            return Path.Combine(Application.persistentDataPath, filePath);
+            return Path.Combine(Application.persistentDataPath, filePath + ".json");
         }
     }
 }

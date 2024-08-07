@@ -1,0 +1,17 @@
+{
+    "name": "Project.EventTracking",
+    "rootNamespace": "Project.EventTracking",
+    "references": [
+        "GUID:3132ed7a6c0dda24a95e94210a07a50d",
+        "GUID:0a8e71f18fcf72d469243f9108d5fdd1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
